@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Developer https://scharss.github.io/-->
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130429672-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-130429672-1');
+    </script>
+    <link rel="icon" href="img/confix.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Buro</title>
+    <!--<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js">
+    </script>-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
+    <link href="css/mains.scss" rel="stylesheet" type="text/css" />
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .mySlides {
+            display: none;
+        }
+        
+        img {
+            vertical-align: middle;
+        }
+        /* Slideshow container */
+        
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
+        /* Caption text */
+        
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+        /* Number text (1/3 etc) */
+        
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+        /* The dots/bullets/indicators */
+        
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+        
+        .active {
+            background-color: #717171;
+        }
+        /* Fading animation */
+        
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+        
+        @-webkit-keyframes fade {
+            from {
+                opacity: 1
+            }
+            to {
+                opacity: 1
+            }
+        }
+        
+        @keyframes fade {
+            from {
+                opacity: 1
+            }
+            to {
+                opacity: 1
+            }
+        }
+        /* On smaller screens, decrease text size */
+        
+        @media only screen and (max-width: 300px) {
+            .text {
+                font-size: 11px
+            }
+        }
+    </style>
+    <!--spreadsheet-->
+
+    <script src="js/jquery-3.4.1.js"></script>
+    <script>
+        function SubForm() {
+            $.ajax({
+                url: 'https://api.apispreadsheets.com/data/6975/',
+                type: 'post',
+                data: $("#myForm").serializeArray(),
+                success: function() {
+                    alert("SU PEDIDO YA ESTÁ  EN CAMINO, PAGO EN EFECTIVO A CONTRA ENTREGA, GRACIAS POR LA COMPRA");
+                },
+                error: function() {
+                    alert("ERROR :(")
+                }
+
+            });
+
+        }
+    </script>
+    <!--SlickSlider-->
+    <link rel="stylesheet" type="text/css" href="./slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css">
+    <style type="text/css">
+        html,
+        * {
+            box-sizing: border-box;
+        }
+        
+        .slider {
+            width: 90%;
+            margin: 10px auto;
+        }
+        
+        .slick-slide {
+            margin: 0px 0px;
+        }
+        
+        .slick-slide img {
+            width: 100%;
+        }
+        
+        .slick-prev:before,
+        .slick-next:before {
+            color: black;
+        }
+        
+        .slick-slide {
+            transition: all ease-in-out .3s;
+            opacity: .2;
+        }
+        
+        .slick-active {
+            opacity: .5;
+        }
+        
+        .slick-current {
+            opacity: 1;
+        }
+    </style>
+    <!--Fin Slick Slider-->
+</head>
+
+<body>
+    <!--Barra de Navegación-->
+    <nav class="navbar navbar-expand-md  sticky-top sticky-offset text-light " style="background-color: black">
+        <a class="navbar-brand" href="index.html"><img src="img/log.png" alt="logo"></a>
+        <button class="navbar-toggler bg-light navbar-light" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#alimentos">Alimentos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#vestuario">Vestuario</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="https://meet.jit.si/buroprojekt">Video Chat</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="https://wa.me/573117379576">Ventas +57 311 756 8189  +57 311 7379 576</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://www.facebook.com/buroprojekt" id="link"> <i class="fa fa-facebook-f" style="font-size:20px;color:blue"></i></a>
+
+
+                    <a href="https://www.instagram.com/buroprojekt/" id="link"> <i class="fa fa-instagram" style="font-size:20px;color:red"></i></a>
+                </li>
+            </ul>
+
+
+        </div>
+    </nav>
+    <!--Fin Barra de Navegación-->
+    <!--Slider******************************************-->
+    <div class="mySlides fade">
+        <div class="numbertext">1 / 3</div>
+        <img src="img/slider2.png" style="width:100%">
+
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <img src="img/slider3.png" style="width:100%">
+
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <img src="img/slider1.png" style="width:100%">
+
+    </div>
+
+    </div>
+    <br>
+
+    <div style="text-align:center">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+    <!--Fin Slider**************************************-->
+    <!--Categorías -->
+    <section id="store">
+        <div class="container">
+            <div class="row">
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+                    <a href="#vestuario"><img src="img/ropa.png" alt=""></a>
+                </div>
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+                    <a href="#alimentos"><img src="img/comida.png" alt=""></a>
+                </div>
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+                    <a href="#vestuario"><img src="img/ropa.png" alt=""></a>
+                </div>
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+                    <a href="#alimentos"><img src="img/comida.png" alt=""></a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!--**********FIn Categorias****************-->
+    <section>
+        <!--SlickSLider-->
+        <div class="container">
+            <div class="row">
+                <!--1A COLUMNA-->
+                <div class="col-12 col-ms-12 col-md-12 col-lg-4 col-xl-4">
+
+                    <h5 id="alimentos"><strong>Mercado</strong></h5>
+
+                    <section class="lazy slider">
+                        <div class="card">
+                            <img src="img/comida/harinapan.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Harina Pan</label></P>
+                                <p><label>Precio: $ 1.800 x 500g</label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="charinapan" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" harinapan.validararticulo()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <img src="img/comida/huevos.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Huevos</label></P>
+                                <p><label>Precio: $ 350 Unidad</label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="chuevo" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" huevo.validararticulo()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="img/comida/ARROZ DIANAx500g x$ 1600.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Arroz Diana</label></P>
+                                <p><label>Precio: $ 1.600 x 500g</label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="carrD500g" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" arrD500g.validararticulo(), carritollleno()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="img/comida/ARROZ DIANA ARROBAx12500g$ 37.500.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Arroz Diana</label></P>
+                                <p><label>Precio: $ 37.500 arroba</label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="charinapan" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" validarbtnharinapan(), carritollleno()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="img/comida/ARROZBLANQUITA500g$1600.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Arroz Blanquita</label></P>
+                                <p><label>Precio: $ 1.600 500g</label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="charinapan" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" validarbtnharinapan(), carritollleno()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="img/comida/comida rapida/pizzanapolitana.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Hamburguesa clásica</label></P>
+                                <p><label>Precio: $ 15.000 Combo</label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="charinapan" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" validarbtnharinapan(), carritollleno()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <img src="img/comida/comida rapida/perrosencillocombo.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Hamburguesa clásica</label></P>
+                                <p><label>Precio: $ 15.000 Combo</label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="charinapan" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" validarbtnharinapan(), carritollleno()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+
+
+
+                    </section>
+
+                </div>
+                <!--Fin 1A COLUMNA-->
+                <!--2A COLUMNA-->
+                <div class="col-12 col-ms-12 col-md-12 col-lg-4 col-xl-4">
+                    <h5 id="alimentos"><strong>Restaurante</strong></h5>
+                    <section class="lazy slider">
+                        <div class="card">
+                            <img src="img/comida/comida rapida/hamburguesaclasica.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Hamburguesa clásica</label></P>
+                                <p><label>Precio: $ 15.000 Combo</label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="charinapan" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" validarbtnharinapan(), carritollleno()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <img src="img/comida/comida rapida/hamburguesasencilla.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Hamburguesa clásica</label></P>
+                                <p><label>Precio: $ 15.000 Combo</label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="charinapan" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" validarbtnharinapan(), carritollleno()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="img/comida/comida rapida/hamburguesadequeso.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Hamburguesa clásica</label></P>
+                                <p><label>Precio: $ 15.000 Combo</label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="charinapan" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" validarbtnharinapan(), carritollleno()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="img/comida/comida rapida/pizzahawuaiana.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Hamburguesa clásica</label></P>
+                                <p><label>Precio: $ 15.000 Combo</label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="charinapan" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" validarbtnharinapan(), carritollleno()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="img/comida/comida rapida/pizzaconpepperoniychampiñones.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Hamburguesa clásica</label></P>
+                                <p><label>Precio: $ 15.000 Combo</label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="charinapan" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" validarbtnharinapan(), carritollleno()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="img/comida/comida rapida/pizzanapolitana.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Hamburguesa clásica</label></P>
+                                <p><label>Precio: $ 15.000 Combo</label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="charinapan" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" validarbtnharinapan(), carritollleno()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <img src="img/comida/comida rapida/perrosencillocombo.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Hamburguesa clásica</label></P>
+                                <p><label>Precio: $ 15.000 Combo</label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="charinapan" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" validarbtnharinapan(), carritollleno()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+
+
+
+                    </section>
+
+                </div>
+                <!--Fin 2A COLUMNA-->
+                <div class="col-12 col-ms-12 col-md-12 col-lg-4 col-xl-4">
+                    <!--3A COLUMNA-->
+                    <h5 id="alimentos"><strong>Farmacia</strong></h5>
+                    <section class="lazy slider">
+                        <div class="card">
+                            <img src="img/comida/comida rapida/hamburguesaclasica.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Hamburguesa clásica</label></P>
+                                <p><label>Precio: $ 15.000 Combo</label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="charinapan" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" validarbtnharinapan(), carritollleno()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <img src="img/comida/comida rapida/hamburguesasencilla.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Hamburguesa clásica</label></P>
+                                <p><label>Precio: $ 15.000 Combo</label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="charinapan" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" validarbtnharinapan(), carritollleno()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="img/comida/comida rapida/hamburguesadequeso.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Hamburguesa clásica</label></P>
+                                <p><label>Precio: $ 15.000 Combo</label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="charinapan" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" validarbtnharinapan(), carritollleno()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="img/comida/comida rapida/pizzahawuaiana.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Hamburguesa clásica</label></P>
+                                <p><label>Precio: $ 15.000 Combo</label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="charinapan" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" validarbtnharinapan(), carritollleno()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="img/comida/comida rapida/pizzaconpepperoniychampiñones.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Hamburguesa clásica</label></P>
+                                <p><label>Precio: $ 15.000 Combo</label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="charinapan" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" validarbtnharinapan(), carritollleno()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="img/comida/comida rapida/pizzanapolitana.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Hamburguesa clásica</label></P>
+                                <p><label>Precio: $ 15.000 Combo</label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="charinapan" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" validarbtnharinapan(), carritollleno()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <img src="img/comida/comida rapida/perrosencillocombo.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Hamburguesa clásica</label></P>
+                                <p><label>Precio: $ 15.000 Combo</label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="charinapan" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" validarbtnharinapan(), carritollleno()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+
+
+
+                    </section>
+                </div>
+
+            </div>
+        </div>
+        <!--3A COLUMNA-->
+        <!--Fin SlickSlider-->
+    </section>
+
+    <hr>
+    <section id="carrito">
+        <div class="container">
+            <strong><p> Carrito</p></strong>
+            <div class="row">
+
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+                    <strong><p>Producto</p></strong>
+                </div>
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+                    <strong><p>Cantidad</p></strong>
+                </div>
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+                    <strong><p>Costo</p></strong>
+                </div>
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="cartsection">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+                    <p id="harinapan"></p>
+                    <p id="huevo"></p>
+                    <p id="arrD500g"></p>
+
+                </div>
+
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+                    <p id="totalharinapans"></p>
+                    <p id="totalhuevos"></p>
+                    <p id="totalarrD500g"></p>
+
+                </div>
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+                    <p id="costoharinapans"></p>
+                    <p id="costohuevos"></p>
+                    <p id="costoarrD500g"></p>
+
+                </div>
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+                    <p id="borrarharinapans"></p>
+                    <p id="borrarhuevos"> </p>
+                    <p id="borrararrD500g"> </p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="total">
+        <div class="container">
+            <div class="row">
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+
+                </div>
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+
+                </div>
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+
+                </div>
+
+
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+                    <strong><label>Total</label></strong> <strong><p id="Total"></p></strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--formulario-->
+    <!--spreadsheed-->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <strong><p id="vacio">Carrito Vacío</p></strong>
+                <form id="myForm">
+                    <label>Nombre</label>
+                    <br/>
+                    <input class="form-control" name="Nombre" />
+                    <br/>
+                    <label>Dirección/Barrio</label>
+                    <br/>
+                    <input class="form-control" name="Dirección" />
+                    <br/>
+                    <label>WhatsApp</label>
+                    <br/>
+                    <input class="form-control" name="WhatsApp" />
+                    <br/>
+                    <label>Mensaje</label>
+                    <br/>
+                    <input class="form-control" name="Mensaje" />
+                    <br/>
+                    <!--inputs ocultos-->
+                    <br/>
+                    <input type="hidden" class="form-control" id="numerodeharinapans" name="harinapans" placeholder="" />
+                    <br/>
+
+                    <input type="hidden" class="form-control" id="numerodehuevos" name="huevos" placeholder="">
+                    <br/>
+
+                    <input type="hidden" class="form-control" id="numerodearrD500g" name="arrozdianax500g" placeholder="">
+                    <br/>
+                    <!--Fin inputs ocultos-->
+
+
+                </form>
+                <button class="btn btn-primary btn-sm " onclick="SubForm()">Comprar</button>
+                <button type="button" class="btn btn-dark btn-sm" onclick="restear()">Reset</button>
+            </div>
+        </div>
+    </div>
+    <!--*************************-->
+
+    <!--Slider************************-->
+    <script>
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 1500); // cambia la imagen cada 2 seg
+        }
+    </script>
+    <!--Slider*************************-->
+
+
+    <script type="text/javascript " src="js/main.js "></script>
+
+
+
+
+
+    <a class="coded-on-replit" href="https://wa.me/573117379576" target="_blank"><img src="img/wat.png" alt="replit" />
+    </a>
+    <br>
+    <footer id="footer">
+        Buro
+        <a href="https://www.facebook.com/buroprojekt" id="link"> <i class="fa fa-facebook-f" style="font-size:20px;color:blue"></i></a>
+
+
+        <a href="https://www.instagram.com/buroprojekt/" id="link"> <i class="fa fa-instagram" style="font-size:20px;color:red"></i></a>
+        2021
+    </footer>
+    <!--SlickSlider-->
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+
+    <script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>
+
+    <script type="text/javascript">
+        $(document).on('ready', function() {
+
+
+            $(".lazy").slick({
+                lazyLoad: 'ondemand', // ondemand progressive anticipated
+                infinite: true
+            });
+            $(".lazy2").slick({
+                lazyLoad: 'ondemand', // ondemand progressive anticipated
+                infinite: true
+            });
+        });
+    </script>
+    <!--Fin SlickSlider-->
+</body>
+
+</html>

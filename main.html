@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130429672-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-130429672-1');
+    </script>
+    <link rel="icon" href="img/confix.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>UBeer Drink X</title>
+    <!--<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js">
+    </script>-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script type="text/javascript" src="main.js"></script>
+
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
+    <link href="css/mains.scss" rel="stylesheet" type="text/css" />
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .mySlides {
+            display: none;
+        }
+        
+        img {
+            vertical-align: middle;
+        }
+        /* Slideshow container */
+        
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
+        /* Caption text */
+        
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+        /* Number text (1/3 etc) */
+        
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+        /* The dots/bullets/indicators */
+        
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+        
+        .active {
+            background-color: #717171;
+        }
+        /* Fading animation */
+        
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+        
+        @-webkit-keyframes fade {
+            from {
+                opacity: 1
+            }
+            to {
+                opacity: 1
+            }
+        }
+        
+        @keyframes fade {
+            from {
+                opacity: 1
+            }
+            to {
+                opacity: 1
+            }
+        }
+        /* On smaller screens, decrease text size */
+        
+        @media only screen and (max-width: 300px) {
+            .text {
+                font-size: 11px
+            }
+        }
+    </style>
+    <!--spreadsheet-->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script>
+        function SubForm() {
+            $.ajax({
+                url: 'https://api.apispreadsheets.com/data/6975/',
+                type: 'post',
+                data: $("#myForm").serializeArray(),
+                success: function() {
+                    alert("SU PEDIDO YA ESTÁ  EN CAMINO, PAGO EN EFECTIVO A CONTRA ENTREGA, GRACIAS POR LA COMPRA");
+                },
+                error: function() {
+                    alert("ERROR :(")
+                }
+
+            });
+
+        }
+    </script>
+    <!--SlickSlider-->
+    <link rel="stylesheet" type="text/css" href="./slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css">
+    <style type="text/css">
+        html,
+        * {
+            box-sizing: border-box;
+        }
+        
+        .slider {
+            width: 90%;
+            margin: 10px auto;
+        }
+        
+        .slick-slide {
+            margin: 0px 0px;
+        }
+        
+        .slick-slide img {
+            width: 100%;
+        }
+        
+        .slick-prev:before,
+        .slick-next:before {
+            color: black;
+        }
+        
+        .slick-slide {
+            transition: all ease-in-out .3s;
+            opacity: .2;
+        }
+        
+        .slick-active {
+            opacity: .5;
+        }
+        
+        .slick-current {
+            opacity: 1;
+        }
+    </style>
+    <!--Fin Slick Slider-->
+</head>
+
+<body>
+    <!--Barra de Navegación-->
+    <nav class="navbar navbar-expand-md  sticky-top sticky-offset text-light " style="background-color: black">
+        <a class="navbar-brand" href="index.html"><img src="img/logobeer.png" alt="logo"></a>
+        <a class="navbar-brand" href="#carrito"><img src="img/cart.png" alt="logo"></a>
+        <button class="navbar-toggler bg-light navbar-light" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#licores">Licores</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#beer">Cervezas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#alimentos">Comidas y bebidas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="https://wa.me/573117379576">Ventas +57 311 756 8189  +57 311 7379 576</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://www.facebook.com/ubeerdrinkx" id="link"> <i class="fa fa-facebook-f" style="font-size:20px;color:blue"></i></a>
+
+
+                    <a href="https://www.instagram.com/ubeerdrinkx/" id="link"> <i class="fa fa-instagram" style="font-size:20px;color:red"></i></a>
+                </li>
+            </ul>
+
+
+        </div>
+    </nav>
+    <!--Fin Barra de Navegación-->
+    <!--Slider******************************************-->
+    <div class="mySlides fade">
+        <div class="numbertext">1 / 3</div>
+        <img src="img/slider2.png" style="width:100%">
+
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <img src="img/slider3.png" style="width:100%">
+
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <img src="img/slider1.png" style="width:100%">
+
+    </div>
+
+    </div>
+    <br>
+
+    <div style="text-align:center">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+    <!--Fin Slider**************************************-->
+    <!--Categorías -->
+    <section id="store">
+        <div class="container">
+            <div class="row">
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+                    <a href="#licores"><img src="img/ropa.png" alt=""></a>
+                </div>
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+                    <a href="#alimentos"><img src="img/comida.png" alt=""></a>
+                </div>
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+                    <a href="#beer"><img src="img/beer.png" alt=""></a>
+                </div>
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+                    <a href="#alimentos"><img src="img/comida.png" alt=""></a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!--**************************-->
+    <section>
+        <!--SlickSLider-->
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-ms-12 col-md-12 col-lg-4 col-xl-4">
+                    <!--3A COLUMNA-->
+                    <h5 id="licores"><strong>Licores</strong></h5>
+
+                    <section class="lazy slider">
+                        <div class="card">
+                            <img src="img/licores/licornombre/aguardientecaneca.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Caneca de aguardiente</label></P>
+                                <p><label>Precio: $ 16.500 375ml </label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="ccaneagu" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" caneagu.validararticulo()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <img src="img/licores/licornombre/aguardientebotella.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Botella de Aguardiente</label></P>
+                                <p><label>Precio: $ 29.500 750ml </label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="cbotagu" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" botagu.validararticulo()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="img/licores/licornombre/ronViejodeCaldasCaneca.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Caneca Ron Viejo Caldas</label></P>
+                                <p><label>Precio: $ 21.950 375ml</label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="ccarovi" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" carovi.validararticulo()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="img/licores/licornombre/ronViejodeCaldasBotella.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Botella Ron Viejo Caldas</label></P>
+                                <p><label>Precio: $ 40.950 750ml </label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="cborovi" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" borovi.validararticulo()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="img/licores/licornombre/smirnoff.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Botella Smirnoff</label></P>
+                                <p><label>Precio: $ 5.550 275ml </label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="csmirnoff" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" smirnoff.validararticulo()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <img src="img/licores/licornombre/ronCincoEstrellasBotella.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Brandy 5 estrellas </label></P>
+                                <p><label>Precio: $ 36.000 750ml </label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="cbr5es" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" br5es.validararticulo()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <img src="img/licores/licornombre/bucanasCaneca.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Caneca Bucanas</label></P>
+                                <p><label>Precio: $ 121.000 750ml </label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="ccabucanas " value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" cabucanas .validararticulo()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="img/licores/licornombre/bucanasBotella.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Botella Bucanas</label></P>
+                                <p><label>Precio: $ 156.000 1L </label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="cbobucanas" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" bobucanas.validararticulo()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="img/licores/licornombre/josecuervosbotella.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Botella José Cuervos</label></P>
+                                <p><label>Precio: $ 72.450 750 ml </label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="cbojoscu" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" bojoscu.validararticulo()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="img/licores/licornombre/blackandwhiteCaneca.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Whisky Black and White</label></P>
+                                <p><label>Precio: $ 23.700 375 ml </label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="ccablwh" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" cablwh.validararticulo()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="img/licores/licornombre/blackandwhiteBotella.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Whisky Black and White</label></P>
+                                <p><label>Precio: $ 42.300 700ml </label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="cboblwh" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" boblwh.validararticulo()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="img/licores/licornombre/chivasRegalBotella.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label> Whisky Chivas Regal </label></P>
+                                <p><label>Precio: $ 102.850 700 ml </label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="cchiregl" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" chiregl.validararticulo()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="img/licores/licornombre/oldParrBotella.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Whisky Old Parr</label></P>
+                                <p><label>Precio: $ 140.500 1L </label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="cwholpar" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" wholpar.validararticulo()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="img/licores/licornombre/redlabelBotella.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Whisky Red Label</label></P>
+                                <p><label>Precio: $ 69.150 1L </label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="crelab7" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" relab7.validararticulo()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="img/licores/licornombre/vodkaAbsolut.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Vodka Absolut</label></P>
+                                <p><label>Precio: $ 88.050 1L </label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="cvokAbs1l" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" vokAbs1l.validararticulo()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+
+
+
+                    </section>
+
+                </div>
+                <!--1A COLUMNA-->
+                <div class="col-12 col-ms-12 col-md-12 col-lg-4 col-xl-4">
+                    <h5 id="beer"><strong>Cervezas</strong></h5>
+                    <section class="lazy slider">
+                        <div class="card">
+                            <img src="img/licores/licornombre/sixpackPoker.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Six Pack Poker</label></P>
+                                <p><label>Precio: $ 13.900 6und </label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="cpoker6" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" poker6.validararticulo()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <img src="img/licores/licornombre/sixpackClubColombiaDorada.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Six pack Club Col Dorada</label></P>
+                                <p><label>Precio: $ 15.000 6und </label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="cclubcoldor6" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" clubcoldor6.validararticulo()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="img/licores/licornombre/sixpackClubColombiaNegra.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Six pack Club Col Negra</label></P>
+                                <p><label>Precio: $ 15.000 6und</label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="cclubcolneg6" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" clubcolneg6.validararticulo()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="img/licores/licornombre/sixpackClubColombiaRoja.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Six pack Club Col Roja</label></P>
+                                <p><label>Precio: $ 15.000 6und </label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="cclubcolroj6" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" clubcolroj6.validararticulo()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="img/licores/licornombre/sixpackBubweiserHeineken.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Six pack Heineken</label></P>
+                                <p><label>Precio: $ 20.100 6und </label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="cheinek6" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" heinek6.validararticulo()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="img/licores/licornombre/sixpackCoronaExtra.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Six pack Corona</label></P>
+                                <p><label>Precio: $ 24.000 6und </label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="ccorona6" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" corona6.validararticulo()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <img src="img/licores/licornombre/sixpackBubweiser.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Six pack Bubweiser</label></P>
+                                <p><label>Precio: $ 12.600 6und </label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="cbubweis6" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" bubweis6.validararticulo()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="img/licores/licornombre/sixpackAguila.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Six pack Aguila</label></P>
+                                <p><label>Precio: $ 12.000 6und </label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="caguila6" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" aguila6.validararticulo()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="img/licores/licornombre/sixpackBecks.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Six pack Becks</label></P>
+                                <p><label>Precio: $ 14.400 6und </label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="cbecks6" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" becks6.validararticulo()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+
+
+
+                    </section>
+
+                </div>
+                <div class="col-12 col-ms-12 col-md-12 col-lg-4 col-xl-4">
+                    <!--2A COLUMNA-->
+                    <h5 id="alimentos"><strong>Comidas y bebidas</strong></h5>
+                    <section class="lazy slider">
+                        <div class="card">
+                            <img src="img/comida/comida rapida/hamburguesasencilla.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Hamburguesa clásica</label></P>
+                                <p><label>Precio: $ 20.000 combo </label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="chamburCom" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" hamburCom.validararticulo()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+
+
+
+                        <div class="card">
+                            <img src="img/comida/comida rapida/perrosencillocombo.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>HotDog clásico</label></P>
+                                <p><label>Precio: $ 20.000 combo </label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="chotdogcom" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" hotdogcom.validararticulo()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="img/licores/liquidos/aguabrisa600ml.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Agua cristal botella</label></P>
+                                <p><label>Precio: $ 1.000 600ml </label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="cagucribo" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" agucribo.validararticulo()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="img/licores/liquidos/bretaña1500mlx.png" alt="">
+                            <div class="container">
+                                <strong>
+                                <p><label>Gaseosa Bretaña</label></P>
+                                <p><label>Precio: $ 2.950 1500ml </label></P>
+                                <p><label>Unidades:</label>
+                                </strong>
+                                <input type="number" id="cgasbretaña" value="0" style="width:50px;height:30px"></p>
+
+                                <p><button type="button" class="btn btn-primary btn-sm" onclick=" gasbretaña.validararticulo()"> Agregar a Carrito </button></button>
+                                </p>
+                            </div>
+                        </div>
+
+
+
+                    </section>
+                </div>
+
+            </div>
+        </div>
+        <!--Fin SlickSlider-->
+    </section>
+
+    <hr>
+    <section id="carrito">
+        <div class="container">
+            <strong><p> Carrito</p></strong>
+            <div class="row">
+
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+                    <strong><p>Producto</p></strong>
+                </div>
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+                    <strong><p>Cantidad</p></strong>
+                </div>
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+                    <strong><p>Costo</p></strong>
+                </div>
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="carrito">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+                    <p id="caneagu"></p>
+                    <p id="botagu"></p>
+                    <p id="carovi"></p>
+                    <p id="borovi"></p>
+                    <p id="smirnoff"></p>
+                    <p id="br5es"></p>
+                    <p id="cabucanas "></p>
+                    <p id="bobucanas"></p>
+                    <p id="bojoscu"></p>
+                    <p id="cablwh"></p>
+                    <p id="boblwh"></p>
+                    <p id="chiregl"></p>
+                    <p id="wholpar"></p>
+                    <p id="relab7"></p>
+                    <p id="vokAbs1l"></p>
+                    <p id="poker6"></p>
+                    <p id="clubcoldor6"></p>
+                    <p id="clubcolneg6"></p>
+                    <p id="clubcolroj6"></p>
+                    <p id="heinek6"></p>
+                    <p id="corona6"></p>
+                    <p id="bubweis6"></p>
+                    <p id="aguila6"></p>
+                    <p id="becks6"></p>
+                    <p id="hamburCom"></p>
+                    <p id="hotdogcom"></p>
+                    <p id="agucribo"></p>
+                    <p id="gasbretaña"></p>
+
+                </div>
+
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+                    <p id="totalcaneagu"></p>
+                    <p id="totalbotagu"></p>
+                    <p id="totalcarovi"></p>
+                    <p id="totalborovi"></p>
+                    <p id="totalsmirnoff"></p>
+                    <p id="totalbr5es"></p>
+                    <p id="totalcabucanas "></p>
+                    <p id="totalbobucanas"></p>
+                    <p id="totalbojoscu"></p>
+                    <p id="totalcablwh"></p>
+                    <p id="totalboblwh"></p>
+                    <p id="totalchiregl"></p>
+                    <p id="totalwholpar"></p>
+                    <p id="totalrelab7"></p>
+                    <p id="totalvokAbs1l"></p>
+                    <p id="totalpoker6"></p>
+                    <p id="totalclubcoldor6"></p>
+                    <p id="totalclubcolneg6"></p>
+                    <p id="totalclubcolroj6"></p>
+                    <p id="totalheinek6"></p>
+                    <p id="totalcorona6"></p>
+                    <p id="totalbubweis6"></p>
+                    <p id="totalaguila6"></p>
+                    <p id="totalbecks6"></p>
+                    <p id="totalhamburCom"></p>
+                    <p id="totalhotdogcom"></p>
+                    <p id="totalagucribo"></p>
+                    <p id="totalgasbretaña"></p>
+
+
+                </div>
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+                    <p id="costocaneagu"></p>
+                    <p id="costobotagu"></p>
+                    <p id="costocarovi"></p>
+                    <p id="costoborovi"></p>
+                    <p id="costosmirnoff"></p>
+                    <p id="costobr5es"></p>
+                    <p id="costocabucanas "></p>
+                    <p id="costobobucanas"></p>
+                    <p id="costobojoscu"></p>
+                    <p id="costocablwh"></p>
+                    <p id="costoboblwh"></p>
+                    <p id="costochiregl"></p>
+                    <p id="costowholpar"></p>
+                    <p id="costorelab7"></p>
+                    <p id="costovokAbs1l"></p>
+                    <p id="costopoker6"></p>
+                    <p id="costoclubcoldor6"></p>
+                    <p id="costoclubcolneg6"></p>
+                    <p id="costoclubcolroj6"></p>
+                    <p id="costoheinek6"></p>
+                    <p id="costocorona6"></p>
+                    <p id="costobubweis6"></p>
+                    <p id="costoaguila6"></p>
+                    <p id="costobecks6"></p>
+                    <p id="costohamburCom"></p>
+                    <p id="costohotdogcom"></p>
+                    <p id="costoagucribo"></p>
+                    <p id="costogasbretaña"></p>
+
+
+                </div>
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+                    <p id="borrarcaneagu"></p>
+                    <p id="borrarbotagu"> </p>
+                    <p id="borrarcarovi"> </p>
+                    <p id="borrarborovi"></p>
+                    <p id="borrarsmirnoff"></p>
+                    <p id="borrarbr5es"></p>
+                    <p id="borrarcabucanas "></p>
+                    <p id="borrarbobucanas"></p>
+                    <p id="borrarbojoscu"></p>
+                    <p id="borrarcablwh"></p>
+                    <p id="borrarboblwh"></p>
+                    <p id="borrarchiregl"></p>
+                    <p id="borrarwholpar"></p>
+                    <p id="borrarrelab7"></p>
+                    <p id="borrarvokAbs1l"></p>
+                    <p id="borrarpoker6"></p>
+                    <p id="borrarclubcoldor6"></p>
+                    <p id="borrarclubcolneg6"></p>
+                    <p id="borrarclubcolroj6"></p>
+                    <p id="borrarheinek6"></p>
+                    <p id="borrarcorona6"></p>
+                    <p id="borrarbubweis6"></p>
+                    <p id="borraraguila6"></p>
+                    <p id="borrarbecks6"></p>
+                    <p id="borrarhamburCom"></p>
+                    <p id="borrarhotdogcom"></p>
+                    <p id="borraragucribo"></p>
+                    <p id="borrargasbretaña"></p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="total">
+        <div class="container">
+            <div class="row">
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+
+                </div>
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+
+                </div>
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+
+                </div>
+
+
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+                    <strong><label>Total</label></strong> <strong><p id="Total"></p></strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--formulario-->
+    <!--spreadsheed-->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <strong><p id="vacio">Carrito Vacío</p></strong>
+                <form id="myForm">
+                    <label>Nombre</label>
+                    <br/>
+                    <input class="form-control" name="Nombre" />
+                    <br/>
+                    <label>Dirección/Barrio</label>
+                    <br/>
+                    <input class="form-control" name="Dirección" />
+                    <br/>
+                    <label>WhatsApp</label>
+                    <br/>
+                    <input class="form-control" name="WhatsApp" />
+                    <br/>
+                    <label>Mensaje o Cupón de Descuento</label>
+                    <br/>
+                    <input class="form-control" name="Mensaje" />
+                    <br/>
+                    <!--inputs ocultos-->
+                    <br/>
+                    <input type="hidden" class="form-control" id="numerodecaneagu" name="caneagu" placeholder="" />
+
+
+                    <input type="hidden" class="form-control" id="numerodebotagu" name="botagu" placeholder="">
+
+
+                    <input type="hidden" class="form-control" id="numerodecarovi" name="carovi" placeholder="">
+
+
+                    <input type="hidden" class="form-control" id="numerodeborovi" name="borovi" placeholder="">
+
+
+                    <input type="hidden" class="form-control" id="numerodesmirnoff" name="smirnoff" placeholder="">
+
+
+                    <input type="hidden" class="form-control" id="numerodebr5es" name="br5es" placeholder="">
+
+
+                    <input type="hidden" class="form-control" id="numerodecabucanas " name="cabucanas " placeholder="">
+
+
+                    <input type="hidden" class="form-control" id="numerodebobucanas" name="bobucanas" placeholder="">
+
+
+                    <input type="hidden" class="form-control" id="numerodebojoscu" name="bojoscu" placeholder="">
+
+
+                    <input type="hidden" class="form-control" id="numerodecablwh" name="cablwh" placeholder="">
+
+
+                    <input type="hidden" class="form-control" id="numerodeboblwh" name="boblwh" placeholder="">
+
+
+                    <input type="hidden" class="form-control" id="numerodechiregl" name="chiregl" placeholder="">
+
+
+                    <input type="hidden" class="form-control" id="numerodewholpar" name="wholpar" placeholder="">
+
+
+                    <input type="hidden" class="form-control" id="numeroderelab7" name="relab7" placeholder="">
+
+                    <input type="hidden" class="form-control" id="numerodevokAbs1l" name="vokAbs1l" placeholder="">
+
+                    <input type="hidden" class="form-control" id="numerodepoker6" name="poker6" placeholder="">
+
+                    <input type="hidden" class="form-control" id="numerodeclubcoldor6" name="clubcoldor6" placeholder="">
+
+                    <input type="hidden" class="form-control" id="numerodeclubcolneg6" name="clubcolneg6" placeholder="">
+
+                    <input type="hidden" class="form-control" id="numerodeclubcolroj6" name="clubcolroj6" placeholder="">
+
+                    <input type="hidden" class="form-control" id="numerodeheinek6" name="heinek6" placeholder="">
+
+                    <input type="hidden" class="form-control" id="numerodecorona6" name="corona6" placeholder="">
+
+                    <input type="hidden" class="form-control" id="numerodebubweis6" name="bubweis6" placeholder="">
+
+                    <input type="hidden" class="form-control" id="numerodeaguila6" name="aguila6" placeholder="">
+
+                    <input type="hidden" class="form-control" id="numerodebecks6" name="becks6" placeholder="">
+
+                    <input type="hidden" class="form-control" id="numerodehamburCom" name="hamburCom" placeholder="">
+
+                    <input type="hidden" class="form-control" id="numerodehotdogcom" name="hotdogcom" placeholder="">
+
+                    <input type="hidden" class="form-control" id="numerodeagucribo" name="agucribo" placeholder="">
+
+                    <input type="hidden" class="form-control" id="numerodegasbretaña" name="gasbretaña" placeholder="">
+
+
+                    <input type="hidden" class="form-control" id="fechax" name="Fecha" placeholder="">
+
+
+
+
+                </form>
+                <button class="btn btn-primary btn-sm " onclick="fecha(),SubForm()">Comprar</button>
+                <button type="button" class="btn btn-dark btn-sm" onclick="restear()">Reset</button>
+            </div>
+        </div>
+    </div>
+    <!--*************************-->
+
+    <!--Slider************************-->
+    <script>
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 1500); // Change image every 2 seconds
+        }
+    </script>
+    <!--Slider*************************-->
+
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js ">
+    </script>
+    <script type="text/javascript " src="main.js "></script>
+
+    <!--
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js " integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n " crossorigin="anonymous "></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js " integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js " integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6 " crossorigin="anonymous "></script>
+
+
+
+    <a class="coded-on-replit" href="https://wa.me/573117379576" target="_blank"><img src="img/wat.png" alt="replit" />
+    </a>
+    <br>
+    <footer id="footer">
+        Buro
+        <a href="https://www.facebook.com/ubeerdrinkx" id="link"> <i class="fa fa-facebook-f" style="font-size:20px;color:blue"></i></a>
+
+
+        <a href="https://www.instagram.com/ubeerdrinkx/" id="link"> <i class="fa fa-instagram" style="font-size:20px;color:red"></i></a>
+        2021
+    </footer>
+    <!--SlickSlider-->
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+
+    <script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>
+
+    <script type="text/javascript">
+        $(document).on('ready', function() {
+
+
+            $(".lazy").slick({
+                lazyLoad: 'ondemand', // ondemand progressive anticipated
+                infinite: true
+            });
+            $(".lazy2").slick({
+                lazyLoad: 'ondemand', // ondemand progressive anticipated
+                infinite: true
+            });
+        });
+    </script>
+    <!--Fin SlickSlider-->
+</body>
+
+</html>

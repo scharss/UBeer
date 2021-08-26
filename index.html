@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<!--
+Developer
+https://scharss.github.io/-->
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130429672-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-130429672-1');
+    </script>
+    <link rel="icon" href="img/confix.png">
+    <!-- Responsive -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, 
+				initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Title -->
+    <title>UBeer Drink X</title>
+
+    <!-- Meta Tags requred for 
+	Progressive Web App -->
+    <meta name="apple-mobile-web-app-status-bar" content="#aa7700">
+    <meta name="theme-color" content="black">
+
+    <!-- Manifest File link -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+
+
+
+    <!-- Custom styles for this template -->
+    <link href="css/creative.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body id="page-top">
+    <div class="header-container">
+        <div class="video-container">
+
+
+            <video id="video" src="video/teclas.mp4" muted autoplay loop poster="video/header.png"></video>
+
+            <!--fin video -->
+        </div>
+        <!--fin video container-->
+        <br><br><br><br><br>
+        <div class="container my-auto">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h1 class="text-uppercase">
+                        <strong><p></p>
+                            UBeer Drink X</p> <p></p> </p></strong>
+                    </h1>
+                    <hr>
+                </div>
+                <div class="col-lg-8 mx-auto">
+                    <p class="text-faded mb-5"><strong> </strong> </p>
+
+                    <a class="btn btn-light btn-lg js-scroll-trigger" href="main.html">Entrar</a>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--fin header container-->
+
+    <script>
+        window.addEventListener('load', () => {
+            registerSW();
+        });
+
+        // Register the Service Worker 
+        async function registerSW() {
+            if ('serviceWorker' in navigator) {
+                try {
+                    await navigator
+                        .serviceWorker
+                        .register('serviceworker.js');
+                } catch (e) {
+                    console.log('SW registration failed');
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>
